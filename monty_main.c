@@ -13,7 +13,7 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 {
 	int j;
 	int ext = 0;
-	char *spc = " ", *s, *nl ="\n";
+	char *spc = " ", *s, *nl = "\n";
 	instruction_t inst[] = {{"push", pushA}, {"pall", pallA}, {NULL, NULL}};
 	char *str = NULL;
 
@@ -23,11 +23,9 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 	for (j = 0; 1 ; j++)
 	{
 		if (inst[j].opcode == NULL)
-		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", i, str);
+		{	fprintf(stderr, "L%d: unknown instruction %s\n", i, str);
 			exit(EXIT_FAILURE);
 		}
-
 		if (strncmp(str, inst[j].opcode, 4) == 0)
 		{
 			s = strtok(NULL, spc);
