@@ -13,11 +13,13 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 {
 	int j;
 	int ext = 0;
-	char *spc = " ", *s;
+	char *spc = " ", *s, *nl ="\n";
 	instruction_t inst[] = {{"push", pushA}, {"pall", pallA}, {NULL, NULL}};
 	char *str = NULL;
 
 	str = strtok(buff, spc);
+	if (strcmp(str, nl) == 0)
+		return (NULL);
 	for (j = 0; 1 ; j++)
 	{
 		if (inst[j].opcode == NULL)
