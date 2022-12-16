@@ -11,7 +11,8 @@ void (*get_func(char *opc))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t inst[] = {{"push", pushA}, {"pall", pallA},
 		{"pint", pInt}, {"pop", pOp}, {"swap", sWap},
-		{"add", Add}, {"nop", nOp}, {NULL, NULL}};
+		{"add", Add}, {"nop", nOp}, {"sub", Sub}, {"mul", Mul},
+		{NULL, NULL}};
 	int i;
 
 	for (i = 0; inst[i].opcode; i++)
@@ -36,7 +37,7 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 	char *spc = " ", *s, *nl = "\n";
 	void (*f)(stack_t **stack, unsigned int line_number);
 	char *ops[] = {"push", "pall", "pint", "pop",
-		"swap", "add", "nop",  NULL};
+		"swap", "add", "nop", "sub", "mul", NULL};
 	char *str = NULL;
 
 	str = strtok(buff, spc);

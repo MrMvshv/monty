@@ -64,5 +64,7 @@ void pInt(stack_t **stack, unsigned int line);
 void pOp(stack_t **stack, unsigned int line);
 void sWap(stack_t **stack, unsigned int line);
 void Add(stack_t **stack, unsigned int line);
+void Sub(stack_t **stack, unsigned int line);
+void Mul(stack_t **stack, unsigned int line);
 void nOp(stack_t **stack, unsigned int line);
 #endif
