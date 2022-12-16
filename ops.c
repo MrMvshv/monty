@@ -64,7 +64,9 @@ int _strcmp(char *s1, char *s2)
 		m++;
 	while (s2[n])
 		n++;
-
+	printf("->%s<->%s<- inii\n", s1, s2);
+	if (strcmp(s1, s2) == 0)
+		return (0);
 	if (m > 4 && (s1[4] != '\n'))
 		return (1);
 	if (n == 3 && (s1[3] != '\n'))
