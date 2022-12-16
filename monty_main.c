@@ -117,8 +117,7 @@ int main(int ac, char *av[])
 {
 	if (ac == 1 || ac > 2)
 	{
-		_prerr("USAGE: monty file");
-		_putchar(10);
+		fprintf(stderr, "USAGE: monty file\n\n");
 		exit(EXIT_FAILURE);
 	}
 	else
