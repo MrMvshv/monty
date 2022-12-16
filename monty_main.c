@@ -49,7 +49,7 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 		{	fprintf(stderr, "L%d: unknown instruction %s\n", i, str);
 			exit(EXIT_FAILURE);
 		}
-		if (strncmp(str, ops[j], 3) == 0)
+		if (_strcmp(str, ops[j]) == 0)
 		{	s = strtok(NULL, spc);
 
 			if (s != 0)
