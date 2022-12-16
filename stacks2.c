@@ -54,7 +54,7 @@ void Sub(stack_t **stack, unsigned int line)
 		j++;
 	if (j < 2)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", line);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	a = (*stack)->next;
@@ -79,7 +79,7 @@ void Mul(stack_t **stack, unsigned int line)
 		j++;
 	if (j < 2)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", line);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	a = (*stack)->next;
