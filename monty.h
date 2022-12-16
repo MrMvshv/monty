@@ -63,4 +63,6 @@ void (*get_func(char *opc))(stack_t **stack, unsigned int line_number);
 void pInt(stack_t **stack, unsigned int line);
 void pOp(stack_t **stack, unsigned int line);
 void sWap(stack_t **stack, unsigned int line);
+void Add(stack_t **stack, unsigned int line);
+void nOp(stack_t **stack, unsigned int line);
 #endif
