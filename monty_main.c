@@ -88,9 +88,7 @@ int reader(char *file)
 	fl = fopen(file, "r");
 	if (!fl)
 	{
-		_prerr("Error: Can't open file ");
-		_prerr(file);
-		_putchar(10);
+		fprintf(stderr, "Error: Can't open file %s\n", file);
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -102,6 +100,7 @@ int reader(char *file)
 		}
 	}
 	fclose(fl);
+	freeStack(&gVars.head);
 
 	return (0);
 }
@@ -117,7 +116,7 @@ int main(int ac, char *av[])
 {
 	if (ac == 1 || ac > 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	else

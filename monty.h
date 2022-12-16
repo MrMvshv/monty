@@ -67,4 +67,7 @@ void Add(stack_t **stack, unsigned int line);
 void Sub(stack_t **stack, unsigned int line);
 void Mul(stack_t **stack, unsigned int line);
 void nOp(stack_t **stack, unsigned int line);
+
+
+void freeStack(stack_t **head);
 #endif
