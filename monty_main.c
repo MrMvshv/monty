@@ -58,7 +58,7 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 					gVars.arg = 0;
 				else
 				{	ext = atoi(s);
-					if (ext == 0)
+					if (ext == 0 && j == 0)
 					{	fprintf(stderr, "L%d: usage: push integer\n", i);
 						exit(EXIT_FAILURE);
 					}
