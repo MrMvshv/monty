@@ -59,4 +59,8 @@ stack_t **implement(char buff[], int i, stack_t **stck);
 void pushA(stack_t **stack, unsigned int line_number);
 stack_t *add_node(stack_t **head);
 void pallA(stack_t **stack, unsigned int line_number);
+void (*get_func(char *opc))(stack_t **stack, unsigned int line_number);
+void pInt(stack_t **stack, unsigned int line);
+void pOp(stack_t **stack, unsigned int line);
+void sWap(stack_t **stack, unsigned int line);
 #endif
