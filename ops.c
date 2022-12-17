@@ -106,8 +106,8 @@ char *strVerif(char *str)
 		}
 		else
 		{	ns = &(str[m]);
-			return(ns);
+			return (ns);
 		}
 	}
-	return(str);
+	return (str);
 }
