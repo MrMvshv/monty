@@ -48,7 +48,7 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 	for (j = 0; 1 ; j++)
 	{
 		if (ops[j] == NULL)
-		{	fprintf(stderr, "L%d: unknown instruction %s\n", i, str);
+		{	fprintf(stderr, "L%d: unknown instruction %s", i, str);
 			exit(EXIT_FAILURE);
 		}
 		if (_strcmp(str, ops[j]) == 0)
