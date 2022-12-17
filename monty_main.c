@@ -36,7 +36,7 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 	void (*f)(stack_t **stack, unsigned int line_number);
 	char *ops[] = {"push", "pall", "pint", "pop",
 		"swap", "add", "nop", "sub", "mul", NULL};
-	char *str = NULL, *spc = " ", *s;
+	char *str = NULL, *spc = " ", *s, *nl = "\n";
 
 	str = buff;
 	if (!(str[0] >= 'a' && str[0] <= 'z'))
@@ -48,7 +48,7 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 	for (j = 0; 1 ; j++)
 	{
 		if (ops[j] == NULL)
-		{	fprintf(stderr, "L%d: unknown instruction %s", i, str);
+		{	fprintf(stderr, "L%d: unknown instruction %s\n", i, strtok(str, nl));
 			exit(EXIT_FAILURE);
 		}
 		if (_strcmp(str, ops[j]) == 0)
