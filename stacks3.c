@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * div - divide top 2
+ * dIv - divide top 2
  * @stack: stack
  * @line: line
  *

@@ -10,8 +10,8 @@ global_t gVars;
 void (*get_func(char *opc))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t inst[] = {{"push", pushA}, {"pall", pallA},
-		{"pint", pInt}, {"pop", pOp}, {"div", dIv}, {"mod", mOd}, 
-		{"swap", sWap}, {"add", Add}, {"nop", nOp}, {"sub", Sub}, 
+		{"pint", pInt}, {"pop", pOp}, {"div", dIv}, {"mod", mOd},
+		{"swap", sWap}, {"add", Add}, {"nop", nOp}, {"sub", Sub},
 		{"mul", Mul}, {"pstr", pStr}, {NULL, NULL}};
 	int i;
 
