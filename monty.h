@@ -71,4 +71,5 @@ void nOp(stack_t **stack, unsigned int line);
 
 void freeStack(stack_t **head);
 int _strcmp(char *s1, char *s2);
+char *strVerif(char *str);
 #endif

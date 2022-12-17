@@ -73,3 +73,41 @@ int _strcmp(char *s1, char *s2)
 	else
 		return (strncmp(s1, s2, 3));
 }
+/**
+ * strVerif - verifies a string accurately
+ * @str: string
+ *
+ * Return: verified string
+ */
+char *strVerif(char *str)
+{
+	int m = 0;
+	char *ns;
+
+	if (!str)
+		return (NULL);
+	while (1)
+	{
+		if (str[m] == '\0')
+		{
+			return (NULL);
+		}
+		if (str[m] == 32)
+		{	m++;
+			continue;
+		}
+		else if (str[m] == 10)
+		{
+			return (NULL);
+		}
+		else if (str[m] == 9)
+		{	m++;
+			continue;
+		}
+		else
+		{	ns = &(str[m]);
+			return(ns);
+		}
+	}
+	return(str);
+}

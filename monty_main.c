@@ -34,14 +34,19 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 {
 	int j;
 	int ext = 0;
-	char *spc = " ", *s, *nl = "\n";
+	char *spc = " ", *s;
 	void (*f)(stack_t **stack, unsigned int line_number);
 	char *ops[] = {"push", "pall", "pint", "pop",
 		"swap", "add", "nop", "sub", "mul", NULL};
 	char *str = NULL;
 
-	str = strtok(buff, spc);
-	if (strcmp(str, nl) == 0)
+	str = buff;
+	if (!(str[0] >= 'a' && str[0] <= 'z'))
+		str = strVerif(str);
+	if (str == NULL)
+		return (NULL);
+	str = strtok(str, spc);
+	if (str == NULL)
 		return (NULL);
 	for (j = 0; 1 ; j++)
 	{
@@ -51,7 +56,6 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 		}
 		if (_strcmp(str, ops[j]) == 0)
 		{	s = strtok(NULL, spc);
-
 			if (s != 0)
 			{
 				if (*s == 48)
@@ -101,7 +105,6 @@ int reader(char *file)
 	}
 	fclose(fl);
 	freeStack(&gVars.head);
-
 	return (0);
 }
 
