@@ -10,9 +10,9 @@ global_t gVars;
 void (*get_func(char *opc))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t inst[] = {{"push", pushA}, {"pall", pallA},
-		{"pint", pInt}, {"pop", pOp}, {"swap", sWap},
-		{"add", Add}, {"nop", nOp}, {"sub", Sub}, {"mul", Mul},
-		{NULL, NULL}};
+		{"pint", pInt}, {"pop", pOp}, {"div", dIv}, {"mod", mOd}, 
+		{"swap", sWap}, {"add", Add}, {"nop", nOp}, {"sub", Sub}, 
+		{"mul", Mul}, {"pstr", pStr}, {NULL, NULL}};
 	int i;
 
 	for (i = 0; inst[i].opcode; i++)
@@ -34,8 +34,8 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 {
 	int j, ext = 0;
 	void (*f)(stack_t **stack, unsigned int line_number);
-	char *ops[] = {"push", "pall", "pint", "pop",
-		"swap", "add", "nop", "sub", "mul", NULL};
+	char *ops[] = {"push", "pall", "pint", "pop", "div", "mod",
+		"swap", "add", "nop", "sub", "mul", "pstr", NULL};
 	char *str = NULL, *spc = " ", *s, *nl = "\n";
 
 	str = buff;
@@ -43,7 +43,7 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 		str = strVerif(str);
 	if (str)
 		str = strtok(str, spc);
-	if (str == NULL)
+	if (!str)
 		return (NULL);
 	for (j = 0; 1 ; j++)
 	{
