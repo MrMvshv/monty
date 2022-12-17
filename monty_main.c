@@ -32,8 +32,7 @@ void (*get_func(char *opc))(stack_t **stack, unsigned int line_number)
  */
 stack_t **implement(char buff[], int i, stack_t **stck)
 {
-	int j;
-	int ext = 0;
+	int j, ext = 0;
 	void (*f)(stack_t **stack, unsigned int line_number);
 	char *ops[] = {"push", "pall", "pint", "pop",
 		"swap", "add", "nop", "sub", "mul", NULL};
@@ -42,7 +41,9 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 	str = buff;
 	if (!(str[0] >= 'a' && str[0] <= 'z'))
 		str = strVerif(str);
-	if (!str || !(str = strtok(str, spc)))
+	if (str)
+		str = strtok(str, spc);
+	if (str == NULL)
 		return (NULL);
 	for (j = 0; 1 ; j++)
 	{
@@ -51,8 +52,7 @@ stack_t **implement(char buff[], int i, stack_t **stck)
 			exit(EXIT_FAILURE);
 		}
 		if (_strcmp(str, ops[j]) == 0)
-		{
-			s = strtok(NULL, spc);
+		{	s = strtok(NULL, spc);
 			if (s != 0)
 			{
 				if (*s == 48)
